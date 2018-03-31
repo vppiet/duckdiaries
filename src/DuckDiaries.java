@@ -49,7 +49,7 @@ public class DuckDiaries {
 	 */
 	public static String queryAction(Scanner scanr) throws InputMismatchException {
 		System.out.print("Insert action [write, read or quit]: ");
-		if(!(scanr.hasNext("write"))) {
+		if(!(scanr.hasNext("write") || scanr.hasNext("read") || scanr.hasNext("quit"))) {
 			scanr.nextLine(); //consume invalid input
 			throw new InputMismatchException("invalid input");
 		}
