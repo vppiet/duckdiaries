@@ -4,6 +4,7 @@
  * @version 0.1
  */
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class DuckDiaries {
@@ -21,7 +22,7 @@ public class DuckDiaries {
 		// check if file exists; create file if doesn't exist
 		if(!diaryFile.exists()) {
 			diaryFile.createNewFile();
-		}
+		}		
 		
 		printBanner();
 		
@@ -34,13 +35,28 @@ public class DuckDiaries {
 			}
 		} while(userAction == null);
 		
+		readFile(diaryFile);
+		readFile(diaryFile);
+		
 		// in the end: close scanners 
 		systemInReader.close();
+	}
+	
+	private static void readFile(File txt) throws FileNotFoundException {
+		Scanner fileReader = new Scanner(txt);
+		String line = "";
+		
+		while (fileReader.hasNext()) {
+			line = fileReader.nextLine();
+			System.out.println(line);			
+		}
+		fileReader.close();
 	}
 	
 	/**
 	 * Prints the startup banner
 	 */
+	
 	private static void printBanner() {
 		System.out.println("*************************");
 		System.out.println("***   Duck Diaries   ****");
