@@ -3,6 +3,7 @@
  * @author Ankat
  * @version 0.1
  */
+import java.io.File;
 import java.util.*;
 
 public class DuckDiaries {
@@ -15,6 +16,12 @@ public class DuckDiaries {
 	public static void main(String[] args) throws Exception {
 		String userAction = null;
 		final Scanner systemInReader = new Scanner(System.in);
+		
+		final File diaryFile = new File("diary.txt");
+		// check if file exists; create file if doesn't exist
+		if(!diaryFile.exists()) {
+			diaryFile.createNewFile();
+		}
 		
 		printBanner();
 		
