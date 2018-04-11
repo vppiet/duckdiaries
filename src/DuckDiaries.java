@@ -5,7 +5,10 @@
  */
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DuckDiaries {
 	
@@ -17,26 +20,24 @@ public class DuckDiaries {
 	public static void main(String[] args) throws Exception {
 		String userAction = null;
 		final Scanner systemInReader = new Scanner(System.in);
-		
 		final File diaryFile = new File("diary.txt");
-		// check if file exists; create file if doesn't exist
-		if(!diaryFile.exists()) {
-			diaryFile.createNewFile();
-		}		
+		
+		//main commands in array
+		ArrayList<String> mainCmds = new ArrayList<String>();
+		mainCmds.addAll(Arrays.asList("read", "write", "quit"));
 		
 		printBanner();
 		
 		do {
 			try {
-				userAction = queryAction(systemInReader);
+				userAction = queryAction(systemInReader, mainCmds);
 			}
 			catch(InputMismatchException err) {
 				System.out.println("ERROR: " + err.getMessage());
 			}
 		} while(userAction == null);
 		
-		readFile(diaryFile);
-		readFile(diaryFile);
+
 		
 		// in the end: close scanners 
 		systemInReader.close();
@@ -70,12 +71,19 @@ public class DuckDiaries {
 	 * @throws Exception 
 	 * @throws InputMismatchException invalid input from user
 	 */
-	public static String queryAction(Scanner scanr) throws InputMismatchException {
-		System.out.print("Insert action [write, read or quit]: ");
-		if(!(scanr.hasNext("write") || scanr.hasNext("read") || scanr.hasNext("quit"))) {
-			scanr.nextLine(); //consume invalid input
-			throw new InputMismatchException("invalid input");
+	public static String queryAction(Scanner scanr, ArrayList<String> cmds) throws InputMismatchException {
+		String readAction = "";
+		String actions = String.join(", ", cmds); //stringify commands for desired print format
+		System.out.print("Select action [" + actions + "]: ");
+		
+		if(scanr.hasNextLine()) {
+			readAction = scanr.nextLine();
+			//invalid command inserted by user
+			if(!cmds.contains(readAction)) {
+				throw new InputMismatchException("invalid input");
+			}
 		}
-		return scanr.nextLine();
+		
+		return readAction;
 	}
 }
