@@ -4,7 +4,7 @@ Simple diary program for group work assignment in TUAS programming course. Imple
 
 ## Features
 
-- [ ] Startup message
+- [x] Startup message
 - [ ] User interface
 - [ ] File read and write capabilities
 - [ ] Error handling
