@@ -8,7 +8,6 @@ import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DuckDiaries {
 	
@@ -24,7 +23,9 @@ public class DuckDiaries {
 		
 		//main commands in array
 		ArrayList<String> mainCmds = new ArrayList<String>();
-		mainCmds.addAll(Arrays.asList("read", "write", "quit"));
+		mainCmds.add("read");
+		mainCmds.add("write");
+		mainCmds.add("quit");
 		
 		printBanner();
 		
@@ -35,9 +36,7 @@ public class DuckDiaries {
 			catch(InputMismatchException err) {
 				System.out.println("ERROR: " + err.getMessage());
 			}
-		} while(userAction == null);
-		
-
+		} while(!userAction.equals("quit"));
 		
 		// in the end: close scanners 
 		systemInReader.close();
