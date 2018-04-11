@@ -17,7 +17,7 @@ public class DuckDiaries {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		String userAction = null;
+		String userAction = "";
 		final Scanner systemInReader = new Scanner(System.in);
 		final File diaryFile = new File("diary.txt");
 		
@@ -70,7 +70,7 @@ public class DuckDiaries {
 	 * @throws Exception 
 	 * @throws InputMismatchException invalid input from user
 	 */
-	public static String queryAction(Scanner scanr, ArrayList<String> cmds) throws InputMismatchException {
+	private static String queryAction(Scanner scanr, ArrayList<String> cmds) throws InputMismatchException {
 		String readAction = "";
 		String actions = String.join(", ", cmds); //stringify commands for desired print format
 		System.out.print("Select action [" + actions + "]: ");
@@ -82,7 +82,7 @@ public class DuckDiaries {
 				throw new InputMismatchException("invalid input");
 			}
 		}
-		
+
 		return readAction;
 	}
 }
