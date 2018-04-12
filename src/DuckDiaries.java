@@ -74,32 +74,10 @@ public class DuckDiaries {
 	 * Prints the startup banner
 	 */
 	private static void printBanner() {
-		String a="██";
-		String s="  ";
-		String z="██████";
-		String x="      ";
-		String q="██████████";
-		String w="          ";
-		System.out.println(w+w+w+a+a+s+a+a);
-		System.out.println(w+s+x+q+s+s+z+s);
-		System.out.println(w+s+s+z+q+z+a+s+q+a);
-		System.out.println(w+s+z+a+q+q+q+a+a);
-		System.out.println(w+s+z+a+q+q+q+z);
-		System.out.println(w+s+a+z+q+q+q+z);
-		System.out.println(w+s+a+x+w+w+w+s+s+a);
-		System.out.println(w+s+a+z+q+q+q+z);
-		System.out.println(s+x+a+a+s+x+w+w+w+x+a+a);
-		System.out.println(s+s+a+a+s+x+a+z+x+w+s+s+z+a+x+s+a+a);
-		System.out.println(s+a+w+a+x+s+a+s+s+w+s+a+x+s+a+w+a);
-		System.out.println(s+a+x+s+a+s+s+a+a+s+s+a+s+z+a+s+a+s+s+a+a+s+s+a+x+s+a);
-		System.out.println(s+a+x+s+a+s+z+a+s+a+a+x+s+a+a+s+z+a+s+a+x+s+a);
-		System.out.println(a+a+s+s+a+q+z+a+s+w+q+q+s+s+a+a);
-		System.out.println(a+x+a+w+w+w+w+x+s+a+x+a);
-		System.out.println(a+x+a+q+q+q+q+q+x+a);
-		System.out.println(a+x+s+a+x+s+w+w+w+s+s+a+a+x+s+a);
-		System.out.println(a+a+x+s+a+z+q+q+q+a+a+w+a+a);
-		System.out.println(s+a+a+s+s+w+w+w+w+w+s+a+a);
-		System.out.println(s+s+z+w+w+w+w+w+a+a);
+		System.out.println("******************_ ");
+		System.out.println("***Duck Diaries >(')____");
+		System.out.println("*****************(` =7  / ");
+		System.out.println("^~^~^~^~^~^~^~~^~^`---'~^~ ");
 	}
 	
 	
