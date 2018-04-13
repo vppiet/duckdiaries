@@ -15,18 +15,13 @@ import java.util.ArrayList;
 
 public class DuckDiaries {
 	
-	/**
-	 * Main method
-	 * @param args
-	 * @throws Exception 
-	 */
 	public static void main(String[] args) throws Exception {
-		//user input scanner must be declared here because used as an argument in multiple cases
+		// user input scanner must be declared here because used as an argument in multiple cases
 		final Scanner systemInReader = new Scanner(System.in);
-		//file setup
+		// file setup
 		final File diaryFile = new File("diary.txt");
 		
-		//main commands
+		// main commands
 		ArrayList<String> mainCmds = new ArrayList<String>();
 		mainCmds.add("read");
 		mainCmds.add("write");
@@ -34,7 +29,7 @@ public class DuckDiaries {
 		
 		printBanner();
 		
-		//main loop
+		// main loop
 		String userTask = "";
 		do {
 			try {
@@ -70,9 +65,7 @@ public class DuckDiaries {
 	}
 
 	
-	/**
-	 * Prints the startup banner
-	 */
+	// Prints banner
 	private static void printBanner() {
 		System.out.println("******************_ ");
 		System.out.println("***Duck Diaries >(')____");
@@ -81,12 +74,7 @@ public class DuckDiaries {
 	}
 	
 	
-	/**
-	 * Queries user input which feature to use
-	 * @return String - user input
-	 * @throws Exception 
-	 * @throws InputMismatchException invalid input from user
-	 */
+	// Asks user's choice of task and returns it
 	private static String queryTask(Scanner scanr, ArrayList<String> cmds) throws InputMismatchException {
 		String readTask = "";
 		String cmdsStringed = String.join(", ", cmds); //stringify commands for desired print format
@@ -104,11 +92,7 @@ public class DuckDiaries {
 	}
 	
 	
-	/**
-	 * Reads given File object and prints it
-	 * @param f File object
-	 * @throws FileNotFoundException file not found
-	 */
+	// Prints file contents 
 	private static void readDiary(File f) throws FileNotFoundException {
 		Scanner fileReader = new Scanner(f);
 		String line = "";
@@ -121,10 +105,7 @@ public class DuckDiaries {
 	}
 	
 	
-	/**
-	 * Gets current date in ISO 8601 format
-	 * @return String - Current date
-	 */
+	// Returns current date in ISO 8601 format
 	private static String getCurrentDate() {
 		LocalDate today = LocalDate.now();
 		DateTimeFormatter isoFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -132,16 +113,13 @@ public class DuckDiaries {
 	}
 	
 	
-	/**
-	 * Writes user's inputted lines to given File object
-	 * @param scanr user input scanner
-	 * @param f File object
-	 * @throws IOException
-	 */
+	// Writes user input to file 
 	private static void writeDiary(Scanner scanr, File f) throws IOException {
 		// FileWriter class uses boolean value for second appending argument
 		FileWriter writer = new FileWriter(f, true);
 		String readLine = "";
+		
+		//start of entry
 		writer.write(getCurrentDate() + "\r\n");
 		System.out.println("New entry for date: " + getCurrentDate());
 		do {
@@ -153,7 +131,7 @@ public class DuckDiaries {
 				}
 			}
 		} while(!readLine.equals("end"));
-		//end of diary entry
+		//end of entry
 		writer.write("----------\r\n\r\n");
 		writer.close();
 	}
