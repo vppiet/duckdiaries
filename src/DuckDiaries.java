@@ -56,7 +56,7 @@ public class DuckDiaries {
 				}
 				//write
 				if(userTask.equals(mainCmds.get(1))) {
-					writeFile(systemInReader, diaryFile);
+					writeDiary(systemInReader, diaryFile);
 				}
 			}
 			catch(InputMismatchException err) {
@@ -138,7 +138,7 @@ public class DuckDiaries {
 	 * @param f File object
 	 * @throws IOException
 	 */
-	private static void writeFile(Scanner scanr, File f) throws IOException {
+	private static void writeDiary(Scanner scanr, File f) throws IOException {
 		// FileWriter class uses boolean value for second appending argument
 		FileWriter writer = new FileWriter(f, true);
 		String readLine = "";
