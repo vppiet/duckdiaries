@@ -142,19 +142,19 @@ public class DuckDiaries {
 		// FileWriter class uses boolean value for second appending argument
 		FileWriter writer = new FileWriter(f, true);
 		String readLine = "";
-		writer.write(getCurrentDate() + "\n");
+		writer.write(getCurrentDate() + "\r\n");
 		System.out.println("New entry for date: " + getCurrentDate());
 		do {
 			System.out.print("> Enter line(s) or [end]: ");
 			if(scanr.hasNext()) {
 				readLine = scanr.nextLine();
 				if(!readLine.equals("end")) {
-					writer.write(readLine + "\n");
+					writer.write(readLine + "\r\n");
 				}
 			}
 		} while(!readLine.equals("end"));
 		//end of diary entry
-		writer.write("----------\n\n");
+		writer.write("----------\r\n\r\n");
 		writer.close();
 	}
 }
