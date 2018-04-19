@@ -1,16 +1,27 @@
 # Duck Diaries
 
-Simple diary program for group work assignment in TUAS programming course. Implemented in Java.
+A simple program with which user can read and write diary. Program uses a text file to record diary entries from user.
+
+In-program commands include:
+
+- **create** - create the diary file
+- **read** - read the diary file
+- **write** - write into the diary file
+- **quit** - exit program
+
+Made for a programming course assignment in Turku University of Applied Sciences.
+
+JavaDoc documentation is hosted on [http://vppiet.github.io](http://vppiet.github.io).
 
 ## Features
 
 - [x] Startup message
-- [ ] User interface
-- [ ] File read and write capabilities
-- [ ] Error handling
-- [ ] Add a diary entry for current day
-- [ ] Read diary entries
-- [ ] Get statistics (i.e. # of entries, average entry length)
+- [x] User interface
+- [x] File read and write capabilities
+- [x] Error handling
+- [x] Add a diary entry for current timestamp
+- [x] Read all diary entries
+- [x] Get statistics (# of total rows in file, file size)
 
 ## Team Ankat
 
