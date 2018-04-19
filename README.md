@@ -11,7 +11,7 @@ In-program commands include:
 
 Made for a programming course assignment in Turku University of Applied Sciences.
 
-JavaDoc documentation is hosted on [http://vppiet.github.io](http://vppiet.github.io).
+JavaDoc documentation is hosted on [http://vppiet.github.io/duckdiaries](http://vppiet.github.io/duckdiaries).
 
 ## Features
 
