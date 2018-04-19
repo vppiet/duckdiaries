@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -105,10 +105,10 @@ public class DuckDiaries {
 	}
 	
 	
-	// Returns current date in ISO 8601 format
-	private static String getCurrentDate() {
-		LocalDate today = LocalDate.now();
-		DateTimeFormatter isoFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	// Returns current date & time
+	private static String getCurrentTimestamp() {
+		LocalDateTime today = LocalDateTime.now();
+		DateTimeFormatter isoFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		return today.format(isoFormatter);
 	}
 	
@@ -120,8 +120,8 @@ public class DuckDiaries {
 		String readLine = "";
 		
 		//start of entry
-		writer.write(getCurrentDate() + "\r\n");
-		System.out.println("New entry for date: " + getCurrentDate());
+		writer.write(getCurrentTimestamp() + "\r\n");
+		System.out.println("New entry for date: " + getCurrentTimestamp());
 		do {
 			System.out.print("> Enter line(s) or [end]: ");
 			if(scanr.hasNext()) {
